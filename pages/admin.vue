@@ -1,22 +1,17 @@
 <template>
   <div>
-    signup page
+    Admin page
   </div>
 </template>
 
 <script>
 export default {
-  name: 'signup',
+  name: 'admin',
   data() {
     return {
       name: 'nuxt.js'
     }
   },
-  head() {
-    return {
-      title: '회원가입'
-    }
-  }
 }
 </script>
 

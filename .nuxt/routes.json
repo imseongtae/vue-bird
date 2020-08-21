@@ -1,5 +1,12 @@
 [
   {
+    "name": "admin",
+    "path": "/admin",
+    "component": "/Users/haemil/Desktop/Front-end worksapce/Vue.js/vue-bird/front/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "_name": "_cf5befbc"
+  },
+  {
     "name": "profile",
     "path": "/profile",
     "component": "/Users/haemil/Desktop/Front-end worksapce/Vue.js/vue-bird/front/pages/profile.vue",

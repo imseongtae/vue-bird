@@ -1,6 +1,7 @@
 <template>
   <div>
     hello {{name}}
+    <p>this is main page</p>
   </div>
 </template>
 
@@ -12,6 +13,12 @@ export default {
       name: 'nuxt.js'
     }
   },
+  // head() {
+  //   return {
+  //     // title.. 넣을 수 있음
+  //     title: '메인'
+  //   }
+  // }
 }
 </script>
 

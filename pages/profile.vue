@@ -1,17 +1,24 @@
 <template>
   <div>
     Profile
+
   </div>
 </template>
 
 <script>
 export default {
   name: 'profile',
+  layout: 'admin',
   data() {
     return {
       name: 'nuxt.js'
     }
   },
+  head() {
+    return {
+      title: '프로필'
+    }
+  }
 }
 </script>
 
