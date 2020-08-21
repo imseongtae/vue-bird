@@ -16,6 +16,10 @@
 
 
 ## layouts
+layouts 구현에 도움 받을 수 있는 자료
+
+[pre-made-layouts](https://vuetifyjs.com/ko/getting-started/pre-made-layouts/)
+[google-keep layouts](https://vuetifyjs.com/ko/examples/layouts/google-keep/)
 
 
 ### head
@@ -47,3 +51,17 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
 ```html
 <v-icon>mdi-rabbit</v-icon> Nodebird
 ```
+
+
+
+## vuetify grid System
+
+```html
+<!-- v-row 를 통해 가로 영역을 구분 -->
+<v-row>
+  <!-- v-col을 통해 세로로 나눌 때는 몇대몇으로 나눌 것인가가 중요 -->
+  <v-col></v-col>
+  <v-col></v-col>
+</v-row>
+```
+
