@@ -1,24 +1,25 @@
 <template>
   <div>
-    hello {{name}}
-    <p>this is main page</p>
+    <post-card />
+    <post-card />
+    <post-card />
+    <post-card />
   </div>
 </template>
 
 <script>
+import PostCard from '~/components/PostCard.vue';
+
 export default {
   name: 'index',
+  components: {
+    PostCard,
+  },
   data() {
     return {
       name: 'nuxt.js'
     }
   },
-  // head() {
-  //   return {
-  //     // title.. 넣을 수 있음
-  //     title: '메인'
-  //   }
-  // }
 }
 </script>
 
