@@ -1,5 +1,5 @@
 <template>
-  <v-card :style="{ margin: '12px' }">    
+  <v-card :style="{ margin: '12px' }">
     <v-image />
     <v-card-text>
       <div>
@@ -27,9 +27,7 @@
 <script>
 export default {
   name: 'PostCard',
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

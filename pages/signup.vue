@@ -40,7 +40,9 @@
               :rules="[v => !!v || '약관에 동의해야 합니다.']"
               label="ham에게 약속합니다. 더 나은 사람이 되기 위해 노력하자"
             />
-            <v-btn type="submit" :disabled="!valid" color="#B5E2DF">가입하기</v-btn>
+            <v-btn type="submit" :disabled="!valid" color="#B5E2DF">
+              가입하기
+            </v-btn>
           </v-form>
         </v-container>
       </v-card>
@@ -50,7 +52,7 @@
 
 <script>
 export default {
-  name: 'signup',
+  name: 'Signup',
   data() {
     return {
       valid: false,
@@ -61,39 +63,33 @@ export default {
       terms: false,
       emailRules: [
         v => !!v || '이메일은 필수입니다.',
-        v => /.+@.+/.test(v) || '이메일이 유효하지 않습니다.'
+        v => /.+@.+/.test(v) || '이메일이 유효하지 않습니다.',
       ],
-      nicknameRules: [
-        v => !!v || '닉네임은 필수입니다.'
-      ],
-      passwordRules: [
-        v => !!v || '비밀번호는 필수입니다.'
-      ],
+      nicknameRules: [v => !!v || '닉네임은 필수입니다.'],
+      passwordRules: [v => !!v || '비밀번호는 필수입니다.'],
       passwordCheckRules: [
         v => !!v || '비밀번호 확인은 필수입니다.',
         v => v === this.password || '비밀번호가 일치하지 않습니다.',
       ],
-    }
-  },
-  head() {
-    return {
-      title: '회원가입'
-    }
+    };
   },
   methods: {
     onSubmitForm() {
       console.log('onSubmitForm');
       if (this.$refs.form.validate()) {
-        alert('회원가입 시도')
+        alert('회원가입 시도');
       } else {
-        alert('입력된 값이 유효하지 않습니다.')
+        alert('입력된 값이 유효하지 않습니다.');
       }
       console.log(this.valid);
-    }
+    },
   },
-}
+  head() {
+    return {
+      title: '회원가입',
+    };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

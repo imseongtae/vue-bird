@@ -6,7 +6,9 @@
           <v-subheader>내 프로필</v-subheader>
           <v-form>
             <v-text-field label="닉네임" required />
-            <v-btn color="blue" type="submit">수정</v-btn>
+            <v-btn color="blue" type="submit">
+              수정
+            </v-btn>
           </v-form>
         </v-container>
       </v-card>
@@ -30,19 +32,17 @@
 import FollowList from '~/components/FollowList.vue';
 
 export default {
-  name: 'profile',
+  name: 'Profile',
   // layout: 'admin',
   components: {
     FollowList,
   },
   head() {
     return {
-      title: '프로필'
-    }
-  }
-}
+      title: '프로필',
+    };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

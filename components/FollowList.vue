@@ -19,10 +19,8 @@
 
 <script>
 export default {
-  name: 'FollowList'
-}
+  name: 'FollowList',
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

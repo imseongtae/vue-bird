@@ -2,10 +2,26 @@
   <div>
     <nav>
       <ul>
-        <li><nuxt-link to="/">main</nuxt-link></li>
-        <li><nuxt-link to="/profile">profile</nuxt-link></li>
-        <li><nuxt-link to="/signup">signup</nuxt-link></li>
-        <li><nuxt-link to="/admin">admin</nuxt-link></li>
+        <li>
+          <nuxt-link to="/">
+            main
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/profile">
+            profile
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/signup">
+            signup
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/admin">
+            admin
+          </nuxt-link>
+        </li>
       </ul>
     </nav>
     <nuxt />
@@ -20,9 +36,7 @@ export default {
   //     title: 'vue-bird'
   //   }
   // }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -6,15 +6,13 @@
 
 <script>
 export default {
-  name: 'admin',
+  name: 'Admin',
   data() {
     return {
-      name: 'nuxt.js'
-    }
+      name: 'nuxt.js',
+    };
   },
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

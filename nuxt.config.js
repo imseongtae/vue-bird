@@ -1,12 +1,20 @@
 module.exports = {
   head: {
-    title: 'vue-ham'
+    title: 'vue-ham',
   },
-  modules: [
-    '@nuxtjs/axios',
-  ],
-  buildModules: [
-    '@nuxtjs/vuetify',
-  ]
-
-}
+  modules: ['@nuxtjs/axios'],
+  buildModules: ['@nuxtjs/vuetify'],
+  build: {
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+        });
+      }
+    },
+  },
+};

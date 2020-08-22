@@ -11,18 +11,16 @@
 import PostCard from '~/components/PostCard.vue';
 
 export default {
-  name: 'index',
+  name: 'Index',
   components: {
     PostCard,
   },
   data() {
     return {
-      name: 'nuxt.js'
-    }
+      name: 'nuxt.js',
+    };
   },
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
