@@ -1,8 +1,9 @@
 # vue-bird
 
 ## table of contents
-- layouts
-- vuetify
+- [layouts](#layouts)
+- [vuetify](#vuetify)
+- [ESLint and Prettier](#ESLint-and-Prettier)
 
 
 ---
@@ -69,4 +70,10 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
   </v-col>      
 </v-row>
 ```
+
+
+
+## ESLint and Prettier
+
+[development-tools](https://ko.nuxtjs.org/guide/development-tools/)
 
