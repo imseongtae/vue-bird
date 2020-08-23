@@ -25,7 +25,10 @@
         </v-toolbar-items>
       </v-toolbar>
     </nav>
-
+    <div>{{ name }}</div>
+    <v-btn @click="onChangeName">
+      byebye
+    </v-btn>
     <!-- v-row 를 통해 가로 영역을 구분 -->
     <!-- no-gutters 를 통해 세로줄 간 패딩을 없앨 수 있음 -->
     <v-row no-gutters>
@@ -47,6 +50,16 @@ import LoginForm from '~/components/LoginForm.vue';
 export default {
   components: {
     LoginForm,
+  },
+  computed: {
+    name() {
+      return this.$store.state.posts.name;
+    },
+  },
+  methods: {
+    onChangeName() {
+      this.$store.commit('posts/bye');
+    },
   },
 };
 </script>

@@ -77,3 +77,8 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
 
 [development-tools](https://ko.nuxtjs.org/guide/development-tools/)
 
+
+
+## .nuxt 
+개발환경 또는 배포환경으로 빌드할 때 빌드된 결과물이 `.nuxt`에 들어있다.
+자동으로 생성된 폴더라서 형상관리를 하지 않는다.
