@@ -78,6 +78,11 @@ export default {
       console.log('onSubmitForm');
       if (this.$refs.form.validate()) {
         alert('회원가입 시도');
+        this.$store.dispatch('users/signUp', {
+          nickname: this.nickname,
+          email: this.email,
+          password: this.password,
+        });
       } else {
         alert('입력된 값이 유효하지 않습니다.');
       }
