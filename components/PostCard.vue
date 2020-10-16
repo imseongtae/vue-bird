@@ -1,5 +1,5 @@
 <template>
-  <v-card :style="{ margin: '12px' }">
+  <v-card class="card">
     <v-image />
     <v-card-text>
       <div>
@@ -30,4 +30,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.card {
+  margin-bottom: 1rem;
+}
+</style>

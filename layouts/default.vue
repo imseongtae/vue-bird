@@ -38,7 +38,8 @@
       <v-col cols="12" md="4">
         <login-form />
       </v-col>
-      <v-col cols="12" md="8" :style="{ backgroundColor: 'dodgerblue' }">
+      <!-- <v-col cols="12" md="8" :style="{ backgroundColor: 'dodgerblue' }"> -->
+      <v-col cols="12" md="8">
         <nuxt />
       </v-col>
     </v-row>
