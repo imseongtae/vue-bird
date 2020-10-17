@@ -47,7 +47,7 @@ export default {
     ...mapState('users', ['me']),
   },
   methods: {
-    onChangeTextArea(value) {
+    onChangeTextarea(value) {
       // 사용자 경험을 향상시키기 위해 연속된 작업이 이어질 때는 이전의 상태값 초기화 작업이 필요
       // 이전의 게시글 성공 상태가 초기화되어야 한다.
       if (value.length) {
