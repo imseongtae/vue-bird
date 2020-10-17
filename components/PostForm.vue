@@ -10,12 +10,12 @@
           outlined
           auto-grow
           clearable
-          label="어떤 신기한 일이 있었나요"
+          label="어떤 신기한 일이 있었나요?"
           :hide-details="hideDetails"
-          :success-message="successMessage"
+          :success-messages="successMessages"
           :success="success"
-          :rules="[v => !!v.trim() || '내용을 입력하세요']"
-          @input="onChangeTextArea"
+          :rules="[v => !!v.trim() || '내용을 입력하세요.']"
+          @input="onChangeTextarea"
         />
         <v-btn type="submit" color="green" absolute right>
           twit
@@ -35,30 +35,29 @@ export default {
     return {
       content: '',
       hideDetails: true, // true를 통해 에러메시지를 표현할 공간을 제거, 나중에 false로 바꾸어주어 공간 생성
-      successMessage: '',
+      successMessages: '',
       success: false,
       valid: false,
     };
   },
   computed: {
-    ...mapState('users', {
-      me: state => state.me,
-    }),
+    // ...mapState('users', {
+    //   me: state => state.me,
+    // }),
+    ...mapState('users', ['me']),
   },
   methods: {
-    // ...mapState({
-    //   mainPosts: state => state.posts.mainPosts,
-    //   me: state => state.users.me,
-    // }),
-    onChangeTextArea() {
+    onChangeTextArea(value) {
       // 사용자 경험을 향상시키기 위해 연속된 작업이 이어질 때는 이전의 상태값 초기화 작업이 필요
       // 이전의 게시글 성공 상태가 초기화되어야 한다.
-      this.hideDetails = true;
-      this.success = false;
-      this.successMessage = '';
+      if (value.length) {
+        this.hideDetails = true;
+        this.success = false;
+        this.successMessages = '';
+      }
     },
     async onSubmitForm() {
-      if (this.$ref.form.validate) {
+      if (this.$refs.form.validate) {
         const { content } = this;
         const newPost = {
           content,
@@ -70,12 +69,19 @@ export default {
         };
         try {
           await this.$store.dispatch('posts/add', newPost);
-          // 게시글이 작성되면 에러메시지가 표현되는 공간을 제거
+          this.content = '';
           this.hideDetails = false;
           this.success = true;
-          this.successMessage = '게시글 등록 성공';
+          this.successMessages = '게시글 등록 성공';
         } catch (err) {
           console.log(err);
+        } finally {
+          // 게시글이 작성되면 에러메시지가 표현되는 공간을 제거
+          setTimeout(() => {
+            this.hideDetails = true;
+            this.success = true;
+            this.successMessages = '';
+          }, 2000);
         }
       }
     },

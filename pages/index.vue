@@ -2,10 +2,7 @@
   <v-container>
     <post-form v-if="me" />
     <div>
-      <post-card />
-      <post-card />
-      <post-card />
-      <post-card />
+      <post-card v-for="post in mainPosts" :key="post.id" :post="post" />
     </div>
   </v-container>
 </template>
@@ -36,8 +33,9 @@ export default {
     // }),
     // https://vuex.vuejs.org/kr/guide/modules.html
     // vuex helper에서 네임 스페이스 바인딩
-    ...mapState('users', {
-      me: state => state.me,
+    ...mapState({
+      me: state => state.users.me,
+      mainPosts: state => state.posts.mainPosts,
     }),
   },
 };
