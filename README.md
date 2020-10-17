@@ -75,7 +75,7 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
 
 ## ESLint and Prettier
 
-[development-tools](https://ko.nuxtjs.org/guide/development-tools/)
+[development-tools - nuxtjs guide](https://ko.nuxtjs.org/guide/development-tools/)
 
 
 
