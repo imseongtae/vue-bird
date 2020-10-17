@@ -1,6 +1,6 @@
 module.exports = {
   head: {
-    title: 'vue-ham',
+    title: 'ham-bird',
   },
   modules: ['@nuxtjs/axios'],
   buildModules: ['@nuxtjs/vuetify'],
