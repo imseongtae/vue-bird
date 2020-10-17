@@ -1,18 +1,20 @@
 # vue-bird
 
 ## table of contents
+- [nuxt 주의사항](#nuxt-주의사항)
 - [layouts](#layouts)
 - [vuetify](#vuetify)
-- [ESLint and Prettier](#ESLint-and-Prettier)
-
+- [ESLint and Prettier](#eslint-and-prettier)
+- [.nuxt](#.nuxt)
+- [vuex](#vuex)
 
 ---
 
 
 
-## keypoints
+## nuxt 주의사항
 
-- 폴더의 이름은 항상 동일해야 한다. layouts, pages
+- 폴더의 이름은 항상 동일해야 한다. `layouts`, `pages`
 - nuxt에서는 `Vue.use()`를 사용하지 않는다. nuxt는 SPA와 다르게 단위별 페이지가 존재하므로 `Vue.use()`를 사용하면 모든 페이지에 `Vue.use()`의 중복이 발생한다.
 
 
@@ -55,7 +57,7 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
 
 
 
-## vuetify grid System
+### vuetify grid System
 
 ```html
 <!-- v-row 를 통해 가로 영역을 구분 -->
@@ -79,13 +81,13 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
 
 
 
-## .nuxt 
+## .nuxt
 개발환경 또는 배포환경으로 빌드할 때 빌드된 결과물이 `.nuxt`에 들어있다.
 자동으로 생성된 폴더라서 형상관리를 하지 않는다.
 
 
 
-## vuex 
+## vuex
 vuex 헬퍼 함수 사용법
 
 ```js
@@ -97,4 +99,4 @@ methods: {
 }
 ```
 
-[vuex 헬퍼에서 네임스페이스 바인딩](https://vuex.vuejs.org/kr/guide/modules.html#%E1%84%92%E1%85%A6%E1%86%AF%E1%84%91%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC)
+- [vuex 헬퍼에서 네임스페이스 바인딩](https://vuex.vuejs.org/kr/guide/modules.html#%E1%84%92%E1%85%A6%E1%86%AF%E1%84%91%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC)
