@@ -86,6 +86,8 @@ export default {
       title: '프로필',
     };
   },
+  // header 에서도 me의 상태에 따라 visible 유무를 결정
+  middleware: ['authenticated'],
 };
 </script>
 

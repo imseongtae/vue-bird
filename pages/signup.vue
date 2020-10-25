@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Signup',
   data() {
@@ -73,6 +75,19 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState('users', ['me']),
+  },
+  watch: {
+    me(value) {
+      if (value) {
+        // 프로그래밍적인 방법으로 넘김
+        this.$router.push({
+          path: '/',
+        });
+      }
+    },
+  },
   methods: {
     onSubmitForm() {
       console.log('onSubmitForm');
@@ -94,6 +109,7 @@ export default {
       title: '회원가입',
     };
   },
+  middleware: ['anonymous'],
 };
 </script>
 

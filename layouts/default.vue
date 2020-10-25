@@ -16,10 +16,10 @@
             prepend-icon="mdi-magnify"
             :style="{ display: 'flex', alignItems: 'center', marginTop: '0px' }"
           />
-          <v-btn text nuxt to="/profile">
+          <v-btn v-if="me" text nuxt to="/profile">
             <div>프로필</div>
           </v-btn>
-          <v-btn text nuxt to="/signup">
+          <v-btn v-if="!me" text nuxt to="/signup">
             <div>회원가입</div>
           </v-btn>
         </v-toolbar-items>
@@ -47,13 +47,19 @@
 </template>
 
 <script>
+// xs, sm, md, lg, xl
 import LoginForm from '~/components/LoginForm.vue';
+
+import { mapState } from 'vuex';
 
 export default {
   components: {
     LoginForm,
   },
   computed: {
+    ...mapState({
+      me: state => state.users.me,
+    }),
     name() {
       // posts module을 거쳐야 한다.
       return this.$store.state.posts.name;
