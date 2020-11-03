@@ -87,6 +87,7 @@ export default {
     };
   },
   // header 에서도 me의 상태에 따라 visible 유무를 결정
+  // profile 페이지는 로그인한 사용자만 접근할 수 있어야 함
   middleware: ['authenticated'],
 };
 </script>
