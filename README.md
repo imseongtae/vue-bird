@@ -106,3 +106,39 @@ methods: {
 - nuxt는 라우팅을 미들웨어에서 설정
 - [https://ko.nuxtjs.org/guide/routing](https://ko.nuxtjs.org/guide/routing)
 
+
+
+## 동적 라우트 매칭
+동적 라우트란 URL 주소의 경로에 변수를 가지고 있는 라우트를 의미하며, 이때 경로 내부에 들어있는 변수를 동적 세그먼트라고 부름
+
+- `post/` URL에 컴포넌트가 매칭되지 않게 하기 위해서 `post/_id/index.vue`의 파일 구조를 따름
+- URL post/1 post/3 post/13 등과 같이 `post/` 뒤에 경로가 붙을 경우에만 동작하기 위해
+- `post/_id.vue` - URL에 `post/`만 입력된 상황에서 컴포넌트가 매칭되는 경우를 피하기 위해
+
+```
+post
+ └─_id
+    └─index.vue
+```
+
+
+
+## QnA
+
+### ()를 감싸서 return 하는 이유
+
+```js
+() => {} // 헷갈릴 수 있음
+() => ({}) // {} 를 return, 객체는 소괄호를 빼면 구분이 되지 않는다.
+```
+
+
+### 배열 데이터를 바꿀 때
+- 컴포넌트에서 배열 데이터를 수정한 후, 자식 컴포넌트로 데이터를 넘겨줄 때
+- [Vue.set(object, key, value) 메소드를 사용하여 중첩 된 객체에 반응성 속성을 추가](https://kr.vuejs.org/v2/guide/reactivity.html#%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80-%EA%B2%BD%EA%B3%A0)
+
+```js
+this.$set(this.abc, '0', '5')
+```
+
+
