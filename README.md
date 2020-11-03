@@ -122,6 +122,25 @@ post
 ```
 
 
+## 백엔드로 데이터 요청하기
+게시물의 개수를 모른다고 가정하고, 진행
+불러오는 게시물의 개수가 10개미만이면..! 더 불러오는 기능(백엔드로 보내는 요청)을 해제한다.
+
+```js
+export const state = () => ({
+  mainPosts: [],
+  hasMorePost: true,
+});
+```
+
+
+## Infinite Scrolling
+
+```js
+
+```
+
+
 
 ## QnA
 
