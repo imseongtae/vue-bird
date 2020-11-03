@@ -13,7 +13,7 @@ import PostCard from '~/components/PostCard.vue';
 import { mapState } from 'vuex';
 
 export default {
-  name: 'PostCardItem',
+  name: 'PostItem',
   components: {
     PostCard,
   },
