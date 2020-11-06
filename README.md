@@ -102,6 +102,21 @@ methods: {
 - [vuex 헬퍼에서 네임스페이스 바인딩](https://vuex.vuejs.org/kr/guide/modules.html#%E1%84%92%E1%85%A6%E1%86%AF%E1%84%91%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC)
 
 
+### error
+`state`를 비구조화할당하여 꺼내지 않으면 에러가 발생함
+
+```js
+// loadPosts({ commit }) {
+loadPosts({ commit, state }) {
+  // state 없으면 Error 발생할 수 있음
+  if (state.hasMorePost) {
+    commit('loadPosts');
+  }
+},
+```
+
+
+
 ## middleware
 - nuxt는 라우팅을 미들웨어에서 설정
 - [https://ko.nuxtjs.org/guide/routing](https://ko.nuxtjs.org/guide/routing)
@@ -133,11 +148,67 @@ export const state = () => ({
 });
 ```
 
+### fetch
+- [nuxtjs pages-fetch](https://ko.nuxtjs.org/docs/2.x/components-glossary/pages-fetch)
+- **fetch(context) has been deprecated**, instead you can use an anonymous middleware in your page: middleware(context)
+- `fetch`는 처음 로드될 때 데이터를 넣어주는 역할, 컴포넌트가 화면에 보이기 전, Vuex스토어에 비동기적으로 데이터를 넣을 때 사용
+- 컴포넌트가 마운트되기 전에 사용
+
+```js
+fetch({ store }) {
+  store.dispatch('posts/loadPosts');
+},
+```
 
 ## Infinite Scrolling
 
 ```js
 
+```
+
+
+
+## window
+Browser의 height 값에 접근
+
+
+### window.scrollY
+- 사용자가 스크롤을 얼마나 내렸는지 알려주는 값
+- window.scrollY 를 통해 브라우저의 현재 위치 값에 접근할 수 있음
+
+```js
+console.log(window.scrollY);
+```
+
+
+### document.documentElement.clientHeight
+- 브라우저 영역 안에 담긴 컨텐츠의 높이를 말함. 
+- `document`, 즉 내용 전체의 높이나 길이가 아님 
+
+```js
+document.documentElement.clientHeight
+```
+
+### document.documentElement.scrollHeight
+
+```js
+document.documentElement.scrollHeight
+
+```
+
+### 한 가지 규칙
+컨텐츠의 스크롤을 끝까지 내리면 아래 규칙이 성립함
+
+```js
+window.scrollY + document.documentElement.clientHeight === document.documentElement.scrollHeight
+```
+
+- Infinite Scrolling을 적용하기 위해 아래와 같은 로직을 적용할 수 있다.
+
+```js
+const onScrollEvent =
+        window.scrollY + document.documentElement.clientHeight >
+        document.documentElement.scrollHeight - 300;
 ```
 
 
