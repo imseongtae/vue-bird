@@ -4,10 +4,14 @@
       <!-- <v-image /> -->
       <v-card-text>
         <div>
-          <h3>{{ post.User.nickname }}</h3>
-          <nuxt-link :to="'/post/' + post.id">
-            {{ post.content }}
-          </nuxt-link>
+          <h3>
+            <nuxt-link :to="'/user/' + post.id">
+              {{ post.User.nickname }}
+            </nuxt-link>
+          </h3>
+          <!-- <nuxt-link :to="'/post/' + post.id">
+            {{ post.User.nickname }}
+          </nuxt-link> -->
           <!-- <div>안녕하세요. 게시글입니다.</div> -->
           <div>
             {{ post.content }}

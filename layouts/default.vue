@@ -9,13 +9,25 @@
         </v-toolbar-title>
         <v-spacer />
         <v-toolbar-items>
-          <!-- mdi 를 통해 materialdesignicons 임을 표시, 키워드를 통해 구분 -->
-          <v-text-field
-            label="검색"
-            hide-details
-            prepend-icon="mdi-magnify"
-            :style="{ display: 'flex', alignItems: 'center', marginTop: '0px' }"
-          />
+          <v-form @submit.prevent="onSearchHashtag">
+            <!-- 디자인을 적용하기 위한 div, 이번 프로젝트만을 위해서 -->
+            <div
+              :style="{ display: 'flex', height: '100%', alignItems: 'center' }"
+            >
+              <!-- mdi 를 통해 material design icons 임을 표시, 키워드를 통해 구분 -->
+              <v-text-field
+                v-model="hashtag"
+                label="검색"
+                hide-details
+                prepend-icon="mdi-magnify"
+                :style="{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginTop: '0px',
+                }"
+              />
+            </div>
+          </v-form>
           <v-btn v-if="me" text nuxt to="/profile">
             <div>프로필</div>
           </v-btn>
@@ -25,11 +37,6 @@
         </v-toolbar-items>
       </v-toolbar>
     </nav>
-    <!-- test -->
-    <!-- <div>{{ name }}</div>
-    <v-btn @click="onChangeName">
-      byebye
-    </v-btn> -->
     <!-- v-row 를 통해 가로 영역을 구분 -->
     <!-- no-gutters 를 통해 세로줄 간 패딩을 없앨 수 있음 -->
     <v-row no-gutters>
@@ -47,7 +54,9 @@
 </template>
 
 <script>
+// vuetify 단위
 // xs, sm, md, lg, xl
+
 import LoginForm from '~/components/LoginForm.vue';
 
 import { mapState } from 'vuex';
@@ -56,18 +65,22 @@ export default {
   components: {
     LoginForm,
   },
+  data() {
+    return {
+      hashtag: '',
+    };
+  },
   computed: {
     ...mapState({
       me: state => state.users.me,
     }),
-    name() {
-      // posts module을 거쳐야 한다.
-      return this.$store.state.posts.name;
-    },
   },
   methods: {
-    onChangeName() {
-      this.$store.commit('posts/bye');
+    onSearchHashtag() {
+      this.$router.push({
+        path: `/hashtag/${this.hashtag}`,
+      });
+      this.hashtag = '';
     },
   },
 };
