@@ -1,4 +1,4 @@
-# Input Dummy Data
+# Input Dummy Data in Vuex
 서버쪽 데이터를 어떻게 응답 받을지 모르는 상황에서 프론트엔드를 효율적으로 개발하는 방법
 
 ## 쓰로틀링과 라스트 아이디 방식
