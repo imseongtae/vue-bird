@@ -6,7 +6,7 @@
 - [vuetify](#vuetify)
 - [ESLint and Prettier](#eslint-and-prettier)
 - [.nuxt](#.nuxt)
-- [vuex](#vuex)
+- [vuex helper function](#vuex-helper-function)
 
 ---
 
@@ -87,19 +87,10 @@ mdi 와 같은 키워드를 붙이고 사용해야 함
 
 
 
-## vuex
+## Vuex helper function
 vuex 헬퍼 함수 사용법
 
-```js
-computed: {
-  ...mapState('users', ['followerList', 'followingList']),
-},
-methods: {
-  ...mapActions('users', ['removeFollower', 'removeFollowing']),
-}
-```
-
-- [vuex 헬퍼에서 네임스페이스 바인딩](https://vuex.vuejs.org/kr/guide/modules.html#%E1%84%92%E1%85%A6%E1%86%AF%E1%84%91%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC)
+- [vuex-helper-function.md](./docs/vuex-helper-function.md)
 
 
 ### error
